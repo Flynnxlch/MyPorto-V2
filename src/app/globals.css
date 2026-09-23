@@ -1,0 +1,191 @@
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: false;
+}
+
+/* Neutral-first themes with exactly one accent: `primary`, taken from the CV's gold rule.
+   secondary / accent / neutral are set to neutrals on purpose so no second hue can appear. */
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+
+  --color-base-100: oklch(99% 0.003 85);
+  --color-base-200: oklch(96.5% 0.004 85);
+  --color-base-300: oklch(90% 0.006 85);
+  --color-base-content: oklch(23% 0.012 70);
+
+  --color-primary: oklch(52% 0.115 65);
+  --color-primary-content: oklch(98.5% 0.01 85);
+  --color-secondary: oklch(23% 0.012 70);
+  --color-secondary-content: oklch(98.5% 0.004 85);
+  --color-accent: oklch(23% 0.012 70);
+  --color-accent-content: oklch(98.5% 0.004 85);
+  --color-neutral: oklch(23% 0.012 70);
+  --color-neutral-content: oklch(98.5% 0.004 85);
+
+  --color-info: oklch(23% 0.012 70);
+  --color-info-content: oklch(98.5% 0.004 85);
+  --color-success: oklch(23% 0.012 70);
+  --color-success-content: oklch(98.5% 0.004 85);
+  --color-warning: oklch(23% 0.012 70);
+  --color-warning-content: oklch(98.5% 0.004 85);
+  --color-error: oklch(50% 0.16 28);
+  --color-error-content: oklch(98.5% 0.004 85);
+
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.5rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@plugin "daisyui/theme" {
+  name: "dark";
+  default: false;
+  prefersdark: true;
+  color-scheme: dark;
+
+  --color-base-100: oklch(17% 0.004 70);
+  --color-base-200: oklch(20.5% 0.005 70);
+  --color-base-300: oklch(29% 0.007 70);
+  --color-base-content: oklch(92% 0.006 85);
+
+  --color-primary: oklch(80% 0.115 78);
+  --color-primary-content: oklch(20% 0.03 65);
+  --color-secondary: oklch(92% 0.006 85);
+  --color-secondary-content: oklch(17% 0.004 70);
+  --color-accent: oklch(92% 0.006 85);
+  --color-accent-content: oklch(17% 0.004 70);
+  --color-neutral: oklch(92% 0.006 85);
+  --color-neutral-content: oklch(17% 0.004 70);
+
+  --color-info: oklch(92% 0.006 85);
+  --color-info-content: oklch(17% 0.004 70);
+  --color-success: oklch(92% 0.006 85);
+  --color-success-content: oklch(17% 0.004 70);
+  --color-warning: oklch(92% 0.006 85);
+  --color-warning-content: oklch(17% 0.004 70);
+  --color-error: oklch(70% 0.15 28);
+  --color-error-content: oklch(17% 0.004 70);
+
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.5rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+/* Accent colors. The picker sets data-accent on <html>; each block swaps only the primary tokens,
+   so the neutral base stays and light/dark still works. Light values come from a light DaisyUI theme,
+   dark values from a dark one with a matching hue:
+     blue   corporate / night      indigo  light / dark        green  lemonade / forest
+     pink   valentine / dracula    rust    autumn / sunset
+   Blocks are unlayered so they override the theme tokens. Rules match descendants too,
+   so a swatch carrying data-accent previews its own color. Gold repeats the theme defaults for that swatch. */
+[data-accent="gold"] {
+  --color-primary: oklch(52% 0.115 65);
+  --color-primary-content: oklch(98.5% 0.01 85);
+}
+[data-theme="dark"] [data-accent="gold"],
+[data-theme="dark"][data-accent="gold"] {
+  --color-primary: oklch(80% 0.115 78);
+  --color-primary-content: oklch(20% 0.03 65);
+}
+
+[data-accent="blue"] {
+  --color-primary: oklch(58% 0.158 241.966);
+  --color-primary-content: oklch(100% 0 0);
+}
+[data-theme="dark"] [data-accent="blue"],
+[data-theme="dark"][data-accent="blue"] {
+  --color-primary: oklch(75.351% 0.138 232.661);
+  --color-primary-content: oklch(15.07% 0.027 232.661);
+}
+
+[data-accent="indigo"] {
+  --color-primary: oklch(45% 0.24 277.023);
+  --color-primary-content: oklch(93% 0.034 272.788);
+}
+[data-theme="dark"] [data-accent="indigo"],
+[data-theme="dark"][data-accent="indigo"] {
+  --color-primary: oklch(58% 0.233 277.117);
+  --color-primary-content: oklch(96% 0.018 272.314);
+}
+
+[data-accent="green"] {
+  --color-primary: oklch(58.92% 0.199 134.6);
+  --color-primary-content: oklch(11.784% 0.039 134.6);
+}
+[data-theme="dark"] [data-accent="green"],
+[data-theme="dark"][data-accent="green"] {
+  --color-primary: oklch(68.628% 0.185 148.958);
+  --color-primary-content: oklch(0% 0 0);
+}
+
+[data-accent="pink"] {
+  --color-primary: oklch(65% 0.241 354.308);
+  --color-primary-content: oklch(100% 0 0);
+}
+[data-theme="dark"] [data-accent="pink"],
+[data-theme="dark"][data-accent="pink"] {
+  --color-primary: oklch(75.461% 0.183 346.812);
+  --color-primary-content: oklch(15.092% 0.036 346.812);
+}
+
+[data-accent="rust"] {
+  --color-primary: oklch(40.723% 0.161 17.53);
+  --color-primary-content: oklch(88.144% 0.032 17.53);
+}
+[data-theme="dark"] [data-accent="rust"],
+[data-theme="dark"][data-accent="rust"] {
+  --color-primary: oklch(74.703% 0.158 39.947);
+  --color-primary-content: oklch(14.94% 0.031 39.947);
+}
+
+/* next-themes writes the resolved theme to data-theme on <html>. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@theme inline {
+  --font-sans: var(--font-jakarta);
+  --font-mono: var(--font-geist-mono);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    line-height: 1.7;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--color-primary) 30%, transparent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    /* Static, fully legible fallback: overrides motion's inline start styles. */
+    [data-reveal] {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+}
