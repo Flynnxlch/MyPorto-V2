@@ -76,8 +76,9 @@ function createTiltEngine(shell: HTMLElement, wrap: HTMLElement) {
     currentY += (targetY - currentY) * k
     setVarsFromXY(currentX, currentY)
 
+    // Stop once settled; pointer events restart it
     const stillFar = Math.abs(targetX - currentX) > 0.05 || Math.abs(targetY - currentY) > 0.05
-    if (stillFar || document.hasFocus()) rafId = requestAnimationFrame(step)
+    if (stillFar) rafId = requestAnimationFrame(step)
     else stop()
   }
 

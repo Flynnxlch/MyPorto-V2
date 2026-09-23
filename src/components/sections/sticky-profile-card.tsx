@@ -2,7 +2,7 @@
 
 import { useInView, type Variants } from 'motion/react'
 import * as m from 'motion/react-m'
-import { useRef } from 'react'
+import { useRef, useSyncExternalStore } from 'react'
 import { EASE_OUT } from '@/components/motion/reveal'
 import { ProfileCard } from '@/components/ui/profile-card'
 import { images } from '@/data/assets'
@@ -18,8 +18,19 @@ const hand: Variants = {
   shown: { opacity: 1, y: 0, rotate: 0, transition: { duration: 0.9, ease: EASE_OUT, delay: 0.15 } },
 }
 
+// lg breakpoint: the only width where the card column is shown
+const DESKTOP = '(min-width: 64rem)'
+
+function subscribeDesktop(onChange: () => void) {
+  const query = window.matchMedia(DESKTOP)
+  query.addEventListener('change', onChange)
+  return () => query.removeEventListener('change', onChange)
+}
+
 // Sticky profile card column beside hero and about
 export function StickyProfileCard() {
+  // Mount the card only on desktop, so phones skip its script work and image
+  const isDesktop = useSyncExternalStore(subscribeDesktop, () => window.matchMedia(DESKTOP).matches, () => false)
   const columnRef = useRef<HTMLElement>(null)
   // Visible while the column reaches the top 45% of the viewport
   const shown = useInView(columnRef, { margin: '0px 0px -55% 0px' })
@@ -34,10 +45,7 @@ export function StickyProfileCard() {
           inert={!shown}
           style={{ transformOrigin: '50% 0%' }}
         >
-          <ProfileCard
-            avatarUrl={imageSrc(images.portrait)}
-            name={profile.name}
-          />
+          {isDesktop && <ProfileCard avatarUrl={imageSrc(images.portrait)} name={profile.name} />}
         </m.div>
       </div>
     </aside>
