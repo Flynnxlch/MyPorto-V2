@@ -28,10 +28,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
-    // next-themes sets data-theme before paint, which changes <html> attributes: hence the warning suppression.
+    // next-themes edits <html> before hydration
     <html lang="en" className={`${jakarta.variable} ${geistMono.variable}`} suppressHydrationWarning>
       <head>
-        {/* Applies the saved accent before paint (sets data-accent on <html>), same idea as next-themes. */}
+        {/* Saved accent, applied before paint */}
         <script dangerouslySetInnerHTML={{ __html: ACCENT_SCRIPT }} />
       </head>
       <body className="bg-base-100 font-sans text-base-content antialiased">

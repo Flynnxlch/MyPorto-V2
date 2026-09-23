@@ -8,7 +8,7 @@ import type { Credential } from '@/lib/types'
 export function Experience() {
   return (
     <SectionShell id="experience" title={site.sections.experience}>
-      {/* DaisyUI timeline: alternating on desktop, single column (compact) on mobile. */}
+      {/* Timeline: alternating on desktop, single column on mobile */}
       <ul className="timeline timeline-vertical timeline-snap-icon max-md:timeline-compact">
         {experience.map((item, i) => (
           <li key={item.id}>
@@ -16,7 +16,7 @@ export function Experience() {
             <div className="timeline-middle">
               <span className="block size-3 rounded-box border-2 border-base-content/40 bg-base-100" />
             </div>
-            <Reveal className={`mb-12 max-md:pl-4 ${i % 2 === 0 ? 'timeline-start md:pr-8 md:text-end' : 'timeline-end md:pl-8'}`}>
+            <Reveal className={`max-md:pl-4 ${i < experience.length - 1 ? 'mb-12' : ''} ${i % 2 === 0 ? 'timeline-start md:pr-8 md:text-end' : 'timeline-end md:pl-8'}`}>
               <p className="font-mono text-xs text-base-content/60">{item.period}</p>
               <h3 className="mt-2 text-lg font-semibold">{item.role}</h3>
               <p className="text-base-content/70">

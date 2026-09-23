@@ -22,15 +22,12 @@ function applyAccent(id: string) {
   try {
     localStorage.setItem(ACCENT_STORAGE_KEY, id)
   } catch {
-    // Storage can be blocked (private mode); the choice still applies for this visit.
+    // Storage may be blocked; still applies for this visit
   }
   listeners.forEach((listener) => listener())
 }
 
-/**
- * Accent color picker. Sets data-accent on <html>, which swaps DaisyUI's primary tokens (globals.css),
- * so buttons, links, focus rings and highlights follow the choice in both light and dark mode.
- */
+// Accent color picker: sets data-accent on <html> to swap the primary color
 export function AccentPicker() {
   const accent = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
   const detailsRef = useRef<HTMLDetailsElement>(null)
@@ -77,7 +74,7 @@ export function AccentPicker() {
                   if (detailsRef.current) detailsRef.current.open = false
                 }}
               >
-                {/* data-accent on the swatch scopes that accent's tokens to it, so bg-primary previews it. */}
+                {/* Swatch previews its own accent */}
                 <span aria-hidden data-accent={option.id} className="size-4 rounded-full bg-primary" />
                 {option.label}
                 {selected && <Check aria-hidden className="ml-auto size-4" />}

@@ -4,23 +4,22 @@ import { MediaImage } from '@/components/ui/media-image'
 import { images } from '@/data/assets'
 import { profile } from '@/data/profile'
 import { site } from '@/data/site'
-import { isFilled } from '@/lib/utils'
 
 export function About() {
-  const facts = profile.facts.filter((fact) => isFilled(fact.value))
-
   return (
-    <SectionShell id="about" title={site.sections.about}>
+    // Part of the hero slide; lg:pb-0 so the card column ends at the last paragraph
+    <SectionShell id="about" title={site.sections.about} separator={false} contained={false} slide={false} className="lg:pb-0">
       <div className="grid gap-12 md:grid-cols-12 md:gap-8">
-        <Reveal className="space-y-4 text-base-content/80 md:col-span-8">
+        <Reveal className="space-y-4 text-base-content/80 md:col-span-8 lg:col-span-12">
           {profile.about.map((paragraph) => (
             <p key={paragraph} className="max-w-[65ch]">
               {paragraph}
             </p>
           ))}
         </Reveal>
+        {/* Portrait below lg; the profile card replaces it above */}
         {images.portrait && (
-          <Reveal index={1} className="md:col-span-4 md:w-full md:max-w-72 md:justify-self-end">
+          <Reveal index={1} className="md:col-span-4 lg:hidden md:w-full md:max-w-72 md:justify-self-end">
             <MediaImage
               src={images.portrait}
               alt={profile.name}
@@ -32,17 +31,6 @@ export function About() {
           </Reveal>
         )}
       </div>
-
-      <Reveal>
-        <dl className="mt-12 grid gap-px overflow-hidden rounded-box border border-base-300 bg-base-300 sm:grid-cols-2 lg:grid-cols-4">
-          {facts.map((fact) => (
-            <div key={fact.label} className="bg-base-100 p-4">
-              <dt className="font-mono text-xs tracking-wide text-base-content/60 uppercase">{fact.label}</dt>
-              <dd className="mt-1 font-semibold">{fact.value}</dd>
-            </div>
-          ))}
-        </dl>
-      </Reveal>
     </SectionShell>
   )
 }

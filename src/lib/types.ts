@@ -1,4 +1,3 @@
-export type Fact = { label: string; value: string }
 
 export type ExperienceItem = {
   id: string
@@ -14,7 +13,7 @@ export type Credential = { title: string; issuer: string; year: string }
 
 export type StackItem = {
   name: string
-  /** File name in public/icons without `.svg`. Leave out to show a generic icon. */
+  // File name in public/icons, without .svg
   icon?: string
 }
 

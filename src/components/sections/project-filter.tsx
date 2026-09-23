@@ -12,7 +12,7 @@ type Filter = 'all' | ProjectCategory
 
 const FILTERS: Filter[] = ['all', 'web', 'android']
 
-// Layout animation needs motion's larger feature set; it is loaded only here, on demand.
+// Layout animation features, loaded on demand
 const loadLayoutFeatures = () => import('motion/react').then((mod) => mod.domMax)
 
 export function ProjectFilter({ projects }: { projects: ProjectWithMedia[] }) {

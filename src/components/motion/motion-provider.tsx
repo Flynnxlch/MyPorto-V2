@@ -3,7 +3,7 @@
 import { LazyMotion, MotionConfig, domAnimation } from 'motion/react'
 import type { ReactNode } from 'react'
 
-/** Loads only the DOM animation feature set; `strict` forbids the heavy `motion` component. */
+// Lightweight motion features only
 export function MotionProvider({ children }: { children: ReactNode }) {
   return (
     <LazyMotion features={domAnimation} strict>

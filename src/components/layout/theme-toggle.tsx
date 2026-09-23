@@ -4,7 +4,7 @@ import { Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { site } from '@/data/site'
 
-/** Icons switch in CSS from data-theme, so the button renders identically on server and client. */
+// Icons swap in CSS so server and client markup match
 export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme()
 

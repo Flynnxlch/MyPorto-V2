@@ -30,7 +30,7 @@ const links = [
 
 const iconLinks = links.filter((link) => link.id !== 'linkedin')
 
-/** Icon-only row (hero; LinkedIn is the navbar's Let's Connect button) or labelled list (contact). */
+// Icon row (hero) or labelled list (contact)
 export function SocialLinks({ variant }: { variant: 'icons' | 'list' }) {
   if (variant === 'icons') {
     return (

@@ -1,7 +1,7 @@
 'use client'
 
 import * as Dialog from '@radix-ui/react-dialog'
-import { Download, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { AccentPicker } from '@/components/layout/accent-picker'
 import { CONTAINER } from '@/components/layout/section-shell'
@@ -9,7 +9,7 @@ import { ThemeToggle } from '@/components/layout/theme-toggle'
 import { ButtonLink } from '@/components/ui/link'
 import { MediaImage } from '@/components/ui/media-image'
 import { TechIcon } from '@/components/ui/tech-icon'
-import { files, images, socials } from '@/data/assets'
+import { images, socials } from '@/data/assets'
 import { site } from '@/data/site'
 
 export function Navbar() {
@@ -21,16 +21,16 @@ export function Navbar() {
     const lastId = site.nav[site.nav.length - 1].id
     const onScroll = () => {
       setScrolled(window.scrollY > 8)
-      // The last section can be too short to reach the observer band, so mark it at the page bottom.
+      // Last section may be too short for the observer: mark it at page bottom
       if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 8) setActiveId(lastId)
     }
-    // Sync once for reloads that restore a scroll position without firing a scroll event.
+    // Sync once for restored scroll positions
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // The page's single IntersectionObserver: marks the section crossing the viewport middle.
+  // Active nav link: section crossing the viewport middle
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -83,12 +83,6 @@ export function Navbar() {
         <div className="flex items-center gap-2">
           <ThemeToggle />
           <AccentPicker />
-          {files.cv && (
-            <ButtonLink href={files.cv} className="btn-outline btn-sm hidden border-base-300 sm:inline-flex">
-              <Download aria-hidden className="size-4" />
-              {site.ui.cv}
-            </ButtonLink>
-          )}
           {socials.linkedin && (
             <ButtonLink href={socials.linkedin} className="btn-primary btn-sm hidden sm:inline-flex">
               <TechIcon icon="linkedin" className="size-4" />
@@ -114,12 +108,6 @@ export function Navbar() {
                 </div>
                 <ul className="flex flex-col gap-1">{navLinks(() => setDrawerOpen(false))}</ul>
                 <div className="mt-auto flex flex-col gap-2">
-                  {files.cv && (
-                    <ButtonLink href={files.cv} className="btn-outline border-base-300">
-                      <Download aria-hidden className="size-4" />
-                      {site.ui.cv}
-                    </ButtonLink>
-                  )}
                   {socials.linkedin && (
                     <ButtonLink href={socials.linkedin} className="btn-primary">
                       <TechIcon icon="linkedin" className="size-4" />

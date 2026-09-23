@@ -1,9 +1,6 @@
 import type { Credential, ExperienceItem } from '@/lib/types'
 
-/**
- * EXPERIENCE: newest first. Copy one { ... } block to add a role.
- * Keep bullets to two or three outcomes: what you built, with what, what it solved.
- */
+// Experience, newest first
 export const experience: ExperienceItem[] = [
   {
     id: 'gapura-angkasa-internship',
@@ -23,6 +20,5 @@ export const certifications: Credential[] = [
   { title: 'Android Developer Fundamentals', issuer: 'Google Developers', year: '2024' },
 ]
 
-// TODO: add organizations here, e.g. { title: 'Role', issuer: 'Organization', year: '2024' }.
-// The list is hidden on the page while it is empty.
+// TODO: add organizations (hidden while empty)
 export const organizations: Credential[] = []

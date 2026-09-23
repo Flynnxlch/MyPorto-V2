@@ -7,10 +7,7 @@ import { EASE_OUT } from '@/components/motion/reveal'
 
 const INTERVAL_MS = 3000
 
-/**
- * Crossfades whole roles in place. Every role is also rendered invisibly in the
- * same grid cell, so the line is always as wide as the longest role (no layout shift).
- */
+// Crossfades roles; hidden copies keep the width stable
 export function RoleRotator({ roles }: { roles: string[] }) {
   const [index, setIndex] = useState(0)
   const reduceMotion = useReducedMotion()

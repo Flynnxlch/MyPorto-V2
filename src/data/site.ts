@@ -1,16 +1,10 @@
-/**
- * SITE LABELS: page title, navigation, section headings and every small UI label.
- *
- * Edit only what is inside the quotes. Keep the labels on the left as they are.
- * Personal content lives in profile.ts, experience.ts, projects.ts and stack.ts.
- * Images, the CV and every link live in assets.ts.
- */
+// Site labels: title, navigation, headings and UI text
 export const site = {
   title: 'Muhammad Misyal Gibrani Razzaq · Web and Android Developer',
   description:
     'Portfolio of Muhammad Misyal Gibrani Razzaq, an Informatics Engineering student at UIN Syarif Hidayatullah Jakarta building web and Android applications.',
 
-  // `id` must match a section on the page. The order here is the order in the navbar.
+  // Navbar order; `id` must match a section
   nav: [
     { id: 'about', label: 'About' },
     { id: 'experience', label: 'Experience' },
@@ -31,8 +25,7 @@ export const site = {
     backToTop: 'Back to top',
   },
 
-  // Accent colors for the palette picker next to the theme toggle. The first one is the default.
-  // `id` must match a [data-accent] block in src/app/globals.css.
+  // Accent picker options (first is default); `id` matches [data-accent] in globals.css
   accents: [
     { id: 'gold', label: 'Gold' },
     { id: 'blue', label: 'Blue' },

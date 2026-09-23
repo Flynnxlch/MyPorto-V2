@@ -1,11 +1,6 @@
 import type { StackGroup } from '@/lib/types'
 
-/**
- * TECH STACK: icon plus label, grouped. No proficiency levels.
- *
- * `icon` is a file name in public/icons (without .svg). Icons are drawn in the
- * text color so they follow the theme. Leave `icon` out for a generic icon.
- */
+// Tech stack groups; `icon` is a file name in public/icons
 export const stack: StackGroup[] = [
   {
     title: 'Languages',

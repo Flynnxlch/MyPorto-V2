@@ -1,11 +1,6 @@
 import type { Project } from '@/lib/types'
 
-/**
- * PROJECTS: shown as cards with an All / Web / Android filter.
- *
- * `id` links a project to its screenshot, GitHub and live links in assets.ts.
- * `category` must be 'web' or 'android'.
- */
+// Projects; `id` links to assets.ts, `category` is 'web' or 'android'
 export const projects: Project[] = [
   {
     id: 'bisaditas',
@@ -25,6 +20,5 @@ export const projects: Project[] = [
       'An Android app for tasks, subtasks and group collaboration, with a calendar view and push notifications.',
     tags: ['Kotlin', 'Firebase Firestore', 'Realtime Database', 'Material Design'],
   },
-  // TODO: v1 of the site also listed a Restaurant App (Java, Firebase). It is not on
-  // the CV, so it is left out. Add it back here if you want it shown.
+  // TODO: Restaurant App (Java, Firebase) from v1 left out; re-add if wanted
 ]
