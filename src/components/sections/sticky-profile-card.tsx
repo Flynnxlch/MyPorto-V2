@@ -36,7 +36,7 @@ export function StickyProfileCard() {
   const shown = useInView(columnRef, { margin: '0px 0px -55% 0px' })
 
   return (
-    <aside ref={columnRef} aria-label="Profile card" className="hidden lg:block">
+    <aside ref={columnRef} aria-label="Profile card" className="hidden lg:block lg:pr-2">
       <div className="sticky top-24">
         <m.div
           variants={hand}

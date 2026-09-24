@@ -10,6 +10,7 @@ export const site = {
     { id: 'experience', label: 'Experience' },
     { id: 'stack', label: 'Tech stack' },
     { id: 'projects', label: 'Projects' },
+    { id: 'github', label: 'GitHub' },
     { id: 'contact', label: 'Contact' },
   ],
 
@@ -46,6 +47,7 @@ export const site = {
     organizations: 'Organizations',
     stack: 'Tech stack',
     projects: 'Projects',
+    github: 'GitHub activity',
     contact: 'Contact',
   },
 
@@ -55,6 +57,15 @@ export const site = {
     github: 'GitHub',
     live: 'Live site',
     imagePending: 'Screenshot coming soon',
+  },
+
+  github: {
+    contributions: 'contributions in the last year',
+    languages: 'Top languages',
+    languagesNote: 'By code size across my public repositories',
+    less: 'Less',
+    more: 'More',
+    unavailable: 'GitHub data is unavailable right now.',
   },
 
   socials: {
