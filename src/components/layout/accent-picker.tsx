@@ -3,9 +3,8 @@
 import { Check, Palette } from 'lucide-react'
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
 import { site } from '@/data/site'
-import { ACCENT_STORAGE_KEY } from '@/lib/accent'
+import { ACCENT_STORAGE_KEY, DEFAULT_ACCENT } from '@/lib/accent'
 
-const DEFAULT_ACCENT = site.accents[0].id
 const listeners = new Set<() => void>()
 
 const subscribe = (listener: () => void) => {

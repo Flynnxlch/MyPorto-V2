@@ -11,7 +11,7 @@ export const images = {
 
 export const files = {
   // CV: a file in `public/` or a Google Drive link.
-  cv: '/cv.pdf',
+  cv: '/CV-Muhammad%20Misyal.pdf',
 }
 
 export const socials = {

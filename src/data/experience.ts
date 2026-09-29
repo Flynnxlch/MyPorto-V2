@@ -3,6 +3,19 @@ import type { Credential, ExperienceItem } from '@/lib/types'
 // Experience, newest first
 export const experience: ExperienceItem[] = [
   {
+    id: 'gapura-angkasa-it-development',
+    role: 'IT Development Intern',
+    company: 'PT Gapura Angkasa',
+    location: 'Kemayoran, Jakarta',
+    period: 'Jan 2026 – May 2026',
+    bullets: [
+      'Built a risk management system with React, Node.js and Express that doubled how efficiently and effectively the company identifies risks.',
+      'Built a lease asset management system with React, Node.js and Express, with a geolocation map that tracks where each leased asset is and what condition it is in.',
+      'Took part in team discussions, suggesting approaches to system development and current technology.',
+    ],
+    tags: ['React', 'Node.js', 'Express.js', 'JavaScript'],
+  },
+  {
     id: 'gapura-angkasa-internship',
     role: 'IT Development Intern',
     company: 'PT Gapura Angkasa, Kantor Cabang Pusat',

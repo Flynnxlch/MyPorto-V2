@@ -11,13 +11,11 @@ export function Stack() {
         {stack.map((group, i) => (
           <Reveal key={group.title} index={i % 2}>
             <h3 className="font-mono text-xs tracking-wide text-base-content/60 uppercase">{group.title}</h3>
-            <ul className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
+            {/* Icon above its name; no boxes */}
+            <ul className="mt-6 grid grid-cols-3 gap-x-4 gap-y-8 sm:grid-cols-4">
               {group.items.map((item) => (
-                <li
-                  key={item.name}
-                  className="flex items-center gap-3 rounded-box border border-base-300 px-3 py-2 text-sm font-medium"
-                >
-                  <TechIcon icon={item.icon} className="size-5 text-base-content/70" />
+                <li key={item.name} className="flex flex-col items-center gap-2 text-center text-sm font-medium">
+                  <TechIcon icon={item.icon} className="size-8 text-base-content/70" />
                   {item.name}
                 </li>
               ))}

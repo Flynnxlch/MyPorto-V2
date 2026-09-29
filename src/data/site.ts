@@ -26,7 +26,7 @@ export const site = {
     backToTop: 'Back to top',
   },
 
-  // Accent picker options (first is default); `id` matches [data-accent] in globals.css
+  // Accent picker options; `id` matches [data-accent] in globals.css
   accents: [
     { id: 'gold', label: 'Gold' },
     { id: 'blue', label: 'Blue' },

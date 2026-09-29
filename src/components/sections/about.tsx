@@ -8,7 +8,7 @@ import { site } from '@/data/site'
 export function About() {
   return (
     // Part of the hero slide; lg:pb-0 so the card column ends at the last paragraph
-    <SectionShell id="about" title={site.sections.about} separator={false} contained={false} slide={false} className="lg:pb-0">
+    <SectionShell id="about" title={site.sections.about} separator={false} contained={false} className="lg:pb-0">
       <div className="grid gap-12 md:grid-cols-12 md:gap-8">
         <Reveal className="space-y-4 text-base-content/80 md:col-span-8 lg:col-span-12">
           {profile.about.map((paragraph) => (

@@ -7,9 +7,7 @@ export const profile = {
 
   // One entry per paragraph.
   about: [
-    "I'm in my seventh semester of Informatics Engineering at UIN Syarif Hidayatullah Jakarta, expecting to graduate in 2027. My coursework has focused on data structures and algorithms, mobile application development, and databases.",
-    "I work across the web and Android. In early 2025 I interned at PT Gapura Angkasa, where I built a web module that calculates and visualises the company's cost of goods sold. On Android I build with Kotlin and Java, using Firebase for real-time data.",
-    'I pick up new tools quickly and I work well in teams. I speak Indonesian and English.',
+    "Hi, I'm Gibran. I'm an undergraduate student majoring in Informatics, passionate about full-stack web development with JavaScript and TypeScript, and an Android enthusiast working in Java and Kotlin. I have hands-on experience in a professional workplace, where I learned to work in a team to find solutions. I'm driven by work ethic and focus, and committed to gaining experience and new knowledge that sharpens my skills and feeds my curiosity.",
   ],
 
   contact: {

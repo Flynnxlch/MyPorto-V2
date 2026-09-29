@@ -1,4 +1,4 @@
-// Blank 160px gap between sections
+// Blank 20px gap between sections
 export function Separator({ className = '' }: { className?: string }) {
-  return <div role="separator" className={`h-30 ${className}`} />
+  return <div aria-hidden="true" className={`h-5 ${className}`} />
 }

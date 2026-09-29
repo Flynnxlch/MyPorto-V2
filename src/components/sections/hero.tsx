@@ -27,7 +27,7 @@ export function Hero() {
           {site.hero.primaryButton}
         </ButtonLink>
         {files.cv && (
-          <ButtonLink href={files.cv} className="btn-primary">
+          <ButtonLink href={files.cv} className="btn-primary btn-outline">
             <Download aria-hidden className="size-4" />
             {site.ui.cv}
           </ButtonLink>
