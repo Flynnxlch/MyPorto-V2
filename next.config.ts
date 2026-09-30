@@ -6,6 +6,8 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: __dirname,
   },
+  // Stop `next dev` from writing AGENTS.md / CLAUDE.md; agent docs live in docs/
+  agentRules: false,
 };
 
 export default nextConfig;
