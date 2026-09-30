@@ -1,6 +1,6 @@
 import type { Project } from '@/lib/types'
 
-// Projects; `id` links to assets.ts, `category` is 'web' or 'android'
+// Projects; `id` links to assets.ts, `category` is 'web' or 'android', tag `icon` is a file in public/icons
 export const projects: Project[] = [
   {
     id: 'bisaditas',
@@ -9,7 +9,11 @@ export const projects: Project[] = [
     period: 'Sep 2025 – Oct 2025',
     description:
       'A bootcamp platform for people with disabilities, with text-to-speech, course streaks and rankings, built for APHACTON.',
-    tags: ['Next.js', 'Supabase', 'Vercel'],
+    tags: [
+      { name: 'Next.js', icon: 'nextjs' },
+      { name: 'Supabase', icon: 'supabase' },
+      { name: 'Vercel', icon: 'vercel' },
+    ],
   },
   {
     id: 'task-management-app',
@@ -18,7 +22,11 @@ export const projects: Project[] = [
     period: 'Jun 2025 – Jul 2025',
     description:
       'An Android app for tasks, subtasks and group collaboration, with a calendar view and push notifications.',
-    tags: ['Kotlin', 'Firebase Firestore', 'Realtime Database', 'Material Design'],
+    tags: [
+      { name: 'Kotlin', icon: 'kotlin' },
+      { name: 'Firebase Firestore & Realtime Database', icon: 'firebase' },
+      { name: 'Material Design', icon: 'materialui' },
+    ],
   },
   // TODO: Restaurant App (Java, Firebase) from v1 left out; re-add if wanted
 ]

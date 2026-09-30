@@ -8,7 +8,7 @@ export const stack: StackGroup[] = [
       { name: 'Kotlin', icon: 'kotlin' },
       { name: 'Java', icon: 'java' },
       { name: 'JavaScript', icon: 'javascript' },
-      { name: 'PHP', icon: 'php' },
+      { name: 'TypeScript', icon: 'typescript' },
     ],
   },
   {
@@ -16,16 +16,15 @@ export const stack: StackGroup[] = [
     items: [
       { name: 'Next.js', icon: 'nextjs' },
       { name: 'Express.js', icon: 'express' },
-      { name: 'Android SDK', icon: 'android' },
-      { name: 'Material Design' },
     ],
   },
   {
     title: 'Databases',
     items: [
-      { name: 'Firebase Firestore', icon: 'firebase' },
-      { name: 'Firebase Realtime Database', icon: 'firebase' },
-      { name: 'Supabase (PostgreSQL)', icon: 'supabase' },
+      { name: 'MariaDB', icon: 'mariadb' },
+      { name: 'PostgreSQL', icon: 'postgresql' },
+      { name: 'Supabase', icon: 'supabase' },
+      { name: 'Firebase', icon: 'firebase' },
     ],
   },
   {
@@ -36,7 +35,7 @@ export const stack: StackGroup[] = [
       { name: 'VS Code', icon: 'vscode' },
       { name: 'Figma', icon: 'figma' },
       { name: 'Google Colab', icon: 'googlecolab' },
-      { name: 'Microsoft Office' },
+      { name: 'Docker', icon: 'docker' },
     ],
   },
 ]

@@ -27,7 +27,7 @@ export type Project = {
   category: ProjectCategory
   period: string
   description: string
-  tags: string[]
+  tags: StackItem[]
 }
 
 export type ProjectMedia = { image: string; repo: string; demo: string }

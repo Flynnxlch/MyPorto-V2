@@ -11,9 +11,6 @@ export function imageSrc(path: string) {
 // Hides empty and TODO values
 export const isFilled = (value: string) => value.trim() !== '' && !value.startsWith('TODO')
 
-// Short display form of a URL
-export const displayUrl = (url: string) => url.replace(/^(https?:\/\/(www\.)?|mailto:)/, '').replace(/\/$/, '')
-
 // New tab for remote links and files
 export const newTabProps = (href: string) =>
   isRemote(href) || /^\/.*\.\w+$/.test(href) ? { target: '_blank', rel: 'noopener noreferrer' } : {}

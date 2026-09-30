@@ -43,7 +43,6 @@ export const site = {
   sections: {
     about: 'About',
     experience: 'Experience',
-    certifications: 'Certifications',
     organizations: 'Organizations',
     stack: 'Tech stack',
     projects: 'Projects',
@@ -57,6 +56,7 @@ export const site = {
     github: 'GitHub',
     live: 'Live site',
     imagePending: 'Screenshot coming soon',
+    builtWith: 'Built with',
   },
 
   github: {
@@ -66,6 +66,20 @@ export const site = {
     less: 'Less',
     more: 'More',
     unavailable: 'GitHub data is unavailable right now.',
+  },
+
+  contact: {
+    formTitle: 'Send me a message',
+    name: 'Name',
+    namePlaceholder: 'Your name',
+    nameHint: 'Letters, spaces, dots, apostrophes and hyphens only',
+    message: 'Message',
+    messagePlaceholder: 'What would you like to talk about?',
+    messageHint: 'Plain text only, up to 2000 characters',
+    send: 'Send via email',
+    note: 'Opens your email app with the message ready to send.',
+    subject: 'Portfolio message from',
+    elsewhere: 'Elsewhere',
   },
 
   socials: {

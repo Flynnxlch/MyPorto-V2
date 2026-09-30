@@ -2,7 +2,7 @@ import { Mail, MessageCircle } from 'lucide-react'
 import { TechIcon } from '@/components/ui/tech-icon'
 import { socials } from '@/data/assets'
 import { site } from '@/data/site'
-import { displayUrl, newTabProps } from '@/lib/utils'
+import { newTabProps } from '@/lib/utils'
 
 const ICON_SIZE = 'size-5'
 
@@ -30,7 +30,7 @@ const links = [
 
 const iconLinks = links.filter((link) => link.id !== 'linkedin')
 
-// Icon row (hero) or labelled list (contact)
+// Icon row (hero) or icon + name list (contact)
 export function SocialLinks({ variant }: { variant: 'icons' | 'list' }) {
   if (variant === 'icons') {
     return (
@@ -58,13 +58,10 @@ export function SocialLinks({ variant }: { variant: 'icons' | 'list' }) {
           <a
             href={link.href}
             {...newTabProps(link.href)}
-            className="group flex flex-wrap items-center gap-x-4 gap-y-1 py-4 transition-colors hover:text-primary"
+            className="group flex items-center gap-4 py-4 font-medium transition-colors hover:text-primary"
           >
             <span className="text-base-content/60 group-hover:text-primary">{link.icon}</span>
-            <span className="w-24 font-medium">{link.label}</span>
-            <span className="min-w-0 break-words text-base-content/70 group-hover:text-primary">
-              {displayUrl(link.href)}
-            </span>
+            {link.label}
           </a>
         </li>
       ))}
