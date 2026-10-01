@@ -6,7 +6,7 @@ export type ExperienceItem = {
   location: string
   period: string
   bullets: string[]
-  tags: string[]
+  tags: StackItem[]
 }
 
 export type Credential = { title: string; issuer: string; year: string }
@@ -25,7 +25,6 @@ export type Project = {
   id: string
   title: string
   category: ProjectCategory
-  period: string
   description: string
   tags: StackItem[]
 }

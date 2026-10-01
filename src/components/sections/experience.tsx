@@ -8,15 +8,15 @@ import type { Credential } from '@/lib/types'
 export function Experience() {
   return (
     <SectionShell id="experience" title={site.sections.experience}>
-      {/* Timeline: alternating on desktop, single column on mobile; line and dots in the accent */}
+      {/* Timeline: alternating with an accent line between dots on desktop; on mobile a single column of accent-bordered cards, no line */}
       <ul className="timeline timeline-vertical timeline-snap-icon max-md:timeline-compact">
         {experience.map((item, i) => (
           <li key={item.id}>
-            {i > 0 && <hr className="bg-primary" />}
+            {i > 0 && <hr className="bg-primary max-md:hidden" />}
             <div className="timeline-middle">
               <span className="block size-3 rounded-full bg-primary ring-4 ring-primary/20" />
             </div>
-            <Reveal className={`max-md:pl-4 ${i < experience.length - 1 ? 'mb-12' : ''} ${i % 2 === 0 ? 'timeline-start md:pr-8 md:text-end' : 'timeline-end md:pl-8'}`}>
+            <Reveal className={`max-md:ml-4 max-md:rounded-box max-md:border max-md:border-primary max-md:p-5 ${i < experience.length - 1 ? 'mb-12 max-md:mb-6' : ''} ${i % 2 === 0 ? 'timeline-start md:pr-8 md:text-end' : 'timeline-end md:pl-8'}`}>
               <p className="font-mono text-xs text-base-content/60">{item.period}</p>
               <h3 className="mt-2 text-lg font-semibold">{item.role}</h3>
               <p className="text-base-content/70">
@@ -27,11 +27,10 @@ export function Experience() {
                   <li key={bullet}>{bullet}</li>
                 ))}
               </ul>
-              <div className={`mt-4 flex ${i % 2 === 0 ? 'md:justify-end' : ''}`}>
-                <TagList tags={item.tags} />
-              </div>
+              {/* -ml-2 lines the first icon up with the text; its hit area stays full size */}
+              <TagList tags={item.tags} className={`mt-4 -ml-2 ${i % 2 === 0 ? 'md:-mr-2 md:ml-0 md:justify-end' : ''}`} />
             </Reveal>
-            {i < experience.length - 1 && <hr className="bg-primary" />}
+            {i < experience.length - 1 && <hr className="bg-primary max-md:hidden" />}
           </li>
         ))}
       </ul>

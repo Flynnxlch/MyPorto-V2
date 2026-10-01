@@ -163,11 +163,18 @@ function ProfileCardComponent({
     shell.addEventListener('pointerup', onUp)
     shell.addEventListener('pointercancel', onLeave)
 
-    engine.setImmediate((shell.clientWidth || 0) - ANIMATION_CONFIG.INITIAL_X_OFFSET, ANIMATION_CONFIG.INITIAL_Y_OFFSET)
-    engine.toCenter()
-    engine.beginInitial(ANIMATION_CONFIG.INITIAL_DURATION)
+    // Intro sweep waits for an idle moment, so it stays off the load path (the card is the phone LCP)
+    const startIntro = () => {
+      engine.setImmediate((shell.clientWidth || 0) - ANIMATION_CONFIG.INITIAL_X_OFFSET, ANIMATION_CONFIG.INITIAL_Y_OFFSET)
+      engine.toCenter()
+      engine.beginInitial(ANIMATION_CONFIG.INITIAL_DURATION)
+    }
+    const hasIdle = 'requestIdleCallback' in window
+    const introId = hasIdle ? window.requestIdleCallback(startIntro, { timeout: 2000 }) : window.setTimeout(startIntro, 300)
 
     return () => {
+      if (hasIdle) window.cancelIdleCallback(introId)
+      else window.clearTimeout(introId)
       shell.removeEventListener('pointerenter', onEnter)
       shell.removeEventListener('pointermove', onMove)
       shell.removeEventListener('pointerleave', onLeave)
@@ -200,7 +207,7 @@ function ProfileCardComponent({
             <div className="pc-glare" />
             <div className="pc-content pc-avatar-content">
               {/* eslint-disable-next-line @next/next/no-img-element -- CSS-driven parallax transform on the raw img */}
-              <img className="avatar" src={avatarUrl} alt={name} />
+              <img className="avatar" src={avatarUrl} alt={name} width={513} height={532} />
             </div>
             <div className="pc-content">
               <div className="pc-details">

@@ -11,7 +11,7 @@ export const images = {
 
 export const files = {
   // CV: a file in `public/` or a Google Drive link.
-  cv: '/CV-Muhammad%20Misyal.pdf',
+  cv: '/CV-Misyal.pdf',
 }
 
 export const socials = {
@@ -23,6 +23,21 @@ export const socials = {
 
 // Project media keyed by project id: screenshot (16:10), repo, demo
 export const projectMedia: Record<string, ProjectMedia> = {
+  'risk-management-system': {
+    image: '',
+    repo: 'https://github.com/Flynnxlch/RMS-DevProd',
+    demo: '',
+  },
+  lemon: {
+    image: '',
+    repo: 'https://github.com/Flynnxlch/LeMon',
+    demo: '',
+  },
+  digitalokal: {
+    image: '',
+    repo: 'https://github.com/Flynnxlch/Digitaloka',
+    demo: 'https://digitalokal.vercel.app/',
+  },
   bisaditas: {
     image: '',
     repo: 'https://github.com/Flynnxlch/Bisaditas',

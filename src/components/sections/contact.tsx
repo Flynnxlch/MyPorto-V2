@@ -14,7 +14,7 @@ export function Contact() {
         <Reveal index={1} className="md:col-span-4 md:col-start-9">
           <h3 className="font-mono text-xs tracking-wide text-base-content/60 uppercase">{site.contact.elsewhere}</h3>
           <div className="mt-4">
-            <SocialLinks variant="list" />
+            <SocialLinks />
           </div>
         </Reveal>
       </div>

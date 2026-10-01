@@ -1,5 +1,5 @@
 import { SectionShell } from '@/components/layout/section-shell'
-import { ProjectFilter } from '@/components/sections/project-filter'
+import { ProjectCarousel } from '@/components/sections/project-carousel'
 import { projectMedia } from '@/data/assets'
 import { projects } from '@/data/projects'
 import { site } from '@/data/site'
@@ -11,7 +11,7 @@ export function Projects() {
 
   return (
     <SectionShell id="projects" title={site.sections.projects}>
-      <ProjectFilter projects={withMedia} />
+      <ProjectCarousel projects={withMedia} />
     </SectionShell>
   )
 }

@@ -142,8 +142,6 @@ function TopLanguages({ languages }: { languages: Language[] }) {
           </li>
         ))}
       </ul>
-
-      <p className="mt-4 text-xs text-base-content/60">{site.github.languagesNote}</p>
     </>
   )
 }

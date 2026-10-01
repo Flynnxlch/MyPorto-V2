@@ -28,29 +28,8 @@ const links = [
   },
 ].filter((link) => link.href)
 
-const iconLinks = links.filter((link) => link.id !== 'linkedin')
-
-// Icon row (hero) or icon + name list (contact)
-export function SocialLinks({ variant }: { variant: 'icons' | 'list' }) {
-  if (variant === 'icons') {
-    return (
-      <ul className="flex gap-2">
-        {iconLinks.map((link) => (
-          <li key={link.label}>
-            <a
-              href={link.href}
-              {...newTabProps(link.href)}
-              aria-label={link.label}
-              className="btn btn-square btn-ghost text-base-content/70 hover:text-primary"
-            >
-              {link.icon}
-            </a>
-          </li>
-        ))}
-      </ul>
-    )
-  }
-
+// Icon + name list (contact)
+export function SocialLinks() {
   return (
     <ul className="divide-y divide-base-300 border-y border-base-300">
       {links.map((link) => (

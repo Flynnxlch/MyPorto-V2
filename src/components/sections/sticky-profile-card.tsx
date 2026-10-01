@@ -27,10 +27,15 @@ function subscribeDesktop(onChange: () => void) {
   return () => query.removeEventListener('change', onChange)
 }
 
+// False on the server, so the first render matches the mobile layout
+export function useIsDesktop() {
+  return useSyncExternalStore(subscribeDesktop, () => window.matchMedia(DESKTOP).matches, () => false)
+}
+
 // Sticky profile card column beside hero and about
 export function StickyProfileCard() {
   // Mount the card only on desktop, so phones skip its script work and image
-  const isDesktop = useSyncExternalStore(subscribeDesktop, () => window.matchMedia(DESKTOP).matches, () => false)
+  const isDesktop = useIsDesktop()
   const columnRef = useRef<HTMLElement>(null)
   // Visible while the column reaches the top 45% of the viewport
   const shown = useInView(columnRef, { margin: '0px 0px -55% 0px' })

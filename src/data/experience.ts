@@ -1,6 +1,6 @@
 import type { Credential, ExperienceItem } from '@/lib/types'
 
-// Experience, newest first
+// Experience, newest first; tag `icon` is a file in public/icons
 export const experience: ExperienceItem[] = [
   {
     id: 'gapura-angkasa-it-development',
@@ -13,7 +13,12 @@ export const experience: ExperienceItem[] = [
       'Built a lease asset management system with React, Node.js and Express, with a geolocation map that tracks where each leased asset is and what condition it is in.',
       'Took part in team discussions, suggesting approaches to system development and current technology.',
     ],
-    tags: ['React', 'Node.js', 'Express.js', 'JavaScript'],
+    tags: [
+      { name: 'React', icon: 'react' },
+      { name: 'Node.js', icon: 'nodejs' },
+      { name: 'Express.js', icon: 'express' },
+      { name: 'JavaScript', icon: 'javascript' },
+    ],
   },
   {
     id: 'gapura-angkasa-internship',
@@ -25,7 +30,13 @@ export const experience: ExperienceItem[] = [
       "Built a web module that calculates and visualises the company's cost of goods sold (HPP), using vanilla JavaScript, HTML5, CSS3 and Express.js.",
       "Worked with the team on a WordPress site promoting the company's products.",
     ],
-    tags: ['JavaScript', 'HTML5', 'CSS3', 'Express.js', 'WordPress'],
+    tags: [
+      { name: 'JavaScript', icon: 'javascript' },
+      { name: 'HTML5', icon: 'html5' },
+      { name: 'CSS3', icon: 'css3' },
+      { name: 'Express.js', icon: 'express' },
+      { name: 'WordPress', icon: 'wordpress' },
+    ],
   },
 ]
 

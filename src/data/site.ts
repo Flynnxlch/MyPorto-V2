@@ -23,7 +23,6 @@ export const site = {
     openMenu: 'Open menu',
     closeMenu: 'Close menu',
     menuTitle: 'Navigation',
-    backToTop: 'Back to top',
   },
 
   // Accent picker options; `id` matches [data-accent] in globals.css
@@ -51,8 +50,8 @@ export const site = {
   },
 
   projects: {
-    filterLabel: 'Filter projects',
-    filters: { all: 'All', web: 'Web', android: 'Android' },
+    previous: 'Previous project',
+    next: 'Next project',
     github: 'GitHub',
     live: 'Live site',
     imagePending: 'Screenshot coming soon',
@@ -62,7 +61,6 @@ export const site = {
   github: {
     contributions: 'contributions in the last year',
     languages: 'Top languages',
-    languagesNote: 'By code size across my public repositories',
     less: 'Less',
     more: 'More',
     unavailable: 'GitHub data is unavailable right now.',
@@ -79,7 +77,7 @@ export const site = {
     send: 'Send via email',
     note: 'Opens your email app with the message ready to send.',
     subject: 'Portfolio message from',
-    elsewhere: 'Elsewhere',
+    elsewhere: 'Other',
   },
 
   socials: {
