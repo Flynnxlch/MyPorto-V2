@@ -50,3 +50,6 @@ next-env.d.ts
 
 # playwright test output
 /.playwright-mcp/
+
+# Claude Code settings
+/.claude/

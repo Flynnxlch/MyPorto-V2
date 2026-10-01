@@ -24,27 +24,27 @@ export const socials = {
 // Project media keyed by project id: screenshot (16:10), repo, demo
 export const projectMedia: Record<string, ProjectMedia> = {
   'risk-management-system': {
-    image: '',
+    image: '/images/projects/risk.webp',
     repo: 'https://github.com/Flynnxlch/RMS-DevProd',
     demo: '',
   },
   lemon: {
-    image: '',
+    image: '/images/projects/asset.webp',
     repo: 'https://github.com/Flynnxlch/LeMon',
     demo: '',
   },
   digitalokal: {
-    image: '',
+    image: '/images/projects/digitaloka.webp',
     repo: 'https://github.com/Flynnxlch/Digitaloka',
     demo: 'https://digitalokal.vercel.app/',
   },
   bisaditas: {
-    image: '',
+    image: '/images/projects/bisaditas.webp',
     repo: 'https://github.com/Flynnxlch/Bisaditas',
     demo: '',
   },
   'task-management-app': {
-    image: '',
+    image: '/images/projects/task.webp',
     repo: 'https://github.com/Flynnxlch/Aps-TaskList',
     demo: '',
   },

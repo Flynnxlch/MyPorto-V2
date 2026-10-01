@@ -25,7 +25,7 @@ export function ProjectCard({ project }: { project: ProjectWithMedia }) {
             width={1600}
             height={1000}
             sizes="(min-width: 768px) 480px, 100vw"
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover object-top"
           />
         ) : (
           <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-base-content/70">
